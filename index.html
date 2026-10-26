@@ -3,148 +3,891 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohamed Siddiq | Graphic Design & Vector Portfolio</title>
+  <title>Mohamed Siddiq A.R. | Vector & Graphic Design Portfolio</title>
+  
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg-color: #0d1117;
-      --card-bg: #161b22;
-      --border-color: #30363d;
-      --text-main: #c9d1d9;
-      --text-muted: #8b949e;
-      --accent: #58a6ff;
+      --bg-color: #0b0f17;
+      --card-bg: #141a23;
+      --card-border: #232d3d;
+      --text-primary: #f0f6fc;
+      --text-secondary: #919eab;
+      --accent: #38bdf8;
+      --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+      --whatsapp: #25d366;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: var(--bg-color);
-      color: var(--text-main);
+      color: var(--text-primary);
       padding: 2rem 1rem;
       line-height: 1.6;
     }
 
-    header {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 3rem auto;
+    /* Header Profile & Business Card Section */
+    .profile-container {
+      max-width: 1000px;
+      margin: 1rem auto 3.5rem auto;
     }
 
-    header h1 {
-      font-size: 2.2rem;
+    .business-card {
+      background: linear-gradient(145deg, #182230 0%, #0f1722 100%);
+      border: 1px solid #2e3c50;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .business-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      margin: 0 auto;
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 2px solid var(--accent);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      background-color: #1a2332;
+    }
+
+    .handle-badge {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-gradient);
+      color: #000;
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 0.25rem 0.8rem;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+      white-space: nowrap;
+    }
+
+    .profile-info h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.6rem;
+      font-weight: 800;
       color: #ffffff;
-      margin-bottom: 0.5rem;
+      line-height: 1.1;
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.5px;
     }
 
-    header p {
-      color: var(--text-muted);
+    .profile-title {
       font-size: 1.1rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
+    .profile-bio {
+      color: var(--text-secondary);
+      font-size: 0.98rem;
+      margin-bottom: 1.5rem;
+      max-width: 650px;
+    }
+
+    .contact-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #101722;
+      border: 1px solid #283548;
+      color: var(--text-primary);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .chip:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      background: #182435;
+    }
+
+    .chip.whatsapp:hover {
+      border-color: var(--whatsapp);
+      color: #a7f3d0;
+    }
+
+    /* Main Section Header */
+    .section-title {
+      max-width: 1400px;
+      margin: 0 auto 1.5rem auto;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--card-border);
+    }
+
+    /* Portfolio Grid & Cards */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.8rem;
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
     }
 
     .card {
       background-color: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
       overflow: hidden;
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
     }
 
     .card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px);
       border-color: var(--accent);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 270px;
+      background-color: #060a10;
+      overflow: hidden;
     }
 
     .card img {
       width: 100%;
-      height: 280px;
+      height: 100%;
       object-fit: cover;
       display: block;
-      border-bottom: 1px solid var(--border-color);
+      transition: transform 0.4s ease;
     }
 
-    .card .info {
-      padding: 1.2rem;
+    .card:hover img {
+      transform: scale(1.03);
     }
 
-    .card .info h3 {
+    .card-watermark-tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(11, 15, 23, 0.85);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #cbd5e1;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .card-content {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
       color: #ffffff;
-      font-size: 1.2rem;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.6rem;
     }
 
-    .card .info p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
+    .desc-block {
+      margin-top: 0.3rem;
     }
 
+    .desc-formal {
+      color: #cbd5e1;
+      font-size: 0.88rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .desc-casual {
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      font-style: italic;
+      border-left: 2px solid var(--accent);
+      padding-left: 0.6rem;
+    }
+
+    /* Modal / Lightbox Pop-up */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(5, 8, 14, 0.95);
+      backdrop-filter: blur(8px);
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .modal img {
+      max-width: 92%;
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+      border: 1px solid var(--card-border);
+    }
+
+    .modal .close {
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: 700;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s ease;
+    }
+
+    .modal .close:hover {
+      color: var(--accent);
+    }
+
+    /* Footer */
     footer {
+      max-width: 1400px;
+      margin: 4rem auto 0 auto;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--card-border);
       text-align: center;
-      margin-top: 4rem;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      border-top: 1px solid var(--border-color);
-      padding-top: 2rem;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile Responsive Adjustments */
+    @media (max-width: 768px) {
+      .business-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 1.8rem 1.2rem;
+      }
+
+      .contact-chips {
+        justify-content: center;
+      }
+
+      .profile-info h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Mohamed Siddiq</h1>
-    <p>Graphic Design • Adobe Illustrator Vector Artwork • Digital Media</p>
+  <!-- Profile & Interactive Business Card Header -->
+  <header class="profile-container">
+    <div class="business-card">
+      <div class="avatar-wrapper">
+        <!-- Replace src below with your photo path (e.g. assets/Siddiq_Photo.jpg or profile.jpg) -->
+        <img class="avatar-img" src="assets/profile.jpg" alt="Mohamed Siddiq A.R." onerror="this.src='https://ui-avatars.com/api/?name=Mohamed+Siddiq&background=0284c7&color=fff&size=200'">
+        <div class="handle-badge">@flippix</div>
+      </div>
+
+      <div class="profile-info">
+        <h1>Mohamed Siddiq A.R.</h1>
+        <div class="profile-title">Computer System Operating Technician & Graphic Designer</div>
+        
+        <p class="profile-bio">
+          Based in Kuwait with a strong foundation in range operations, technical system management, and creative vector art. I specialize in precision Adobe Illustrator design, custom typography, brand emblem creation, and automated media workflows.
+        </p>
+
+        <div class="contact-chips">
+          <a href="mailto:mdsiddiq1611@gmail.com" class="chip">
+            ✉️ mdsiddiq1611@gmail.com
+          </a>
+          <a href="https://wa.me/96555312184" target="_blank" class="chip whatsapp">
+            💬 +965 5531 2184
+          </a>
+        </div>
+      </div>
+    </div>
   </header>
 
+  <!-- Section Title -->
+  <div class="section-title">
+    <span>Vector Artwork & Design Showcase</span>
+  </div>
+
+  <!-- Portfolio Grid -->
   <main class="grid">
 
-    <!-- Card 1 -->
+    <!-- 1. Adidas LOGO recreation.png -->
     <article class="card">
-      <img src="assets/TASK 1 IKCC LOGO.png" alt="IKCC Emblem Concept">
-      <div class="info">
-        <h3>IKCC Cultural Emblem Concept</h3>
-        <p>Vector logo design created in Adobe Illustrator focusing on modern cultural typography and balance.</p>
+      <div class="card-img-wrapper">
+        <img src="assets/Adidas LOGO recreation.png" alt="Adidas LOGO recreation">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Adidas LOGO Recreation</div>
+        <div class="desc-block">
+          <p class="desc-formal">Standardized vector path construction demonstrating clean anchor point placement and geometric symmetry on iconic sportswear branding.</p>
+          <p class="desc-casual">Classic three stripes recreated from scratch to test path precision!</p>
+        </div>
       </div>
     </article>
 
-    <!-- Card 2 -->
+    <!-- 2. Apple rainbow LOGO.png -->
     <article class="card">
-      <img src="assets/TASK 2 FILM THURSDAYS.png" alt="Indian Film Thursdays Poster">
-      <div class="info">
-        <h3>Indian Film Thursdays Screening Poster</h3>
-        <p>Promotional poster layout designed for event series branding and print/digital distribution.</p>
+      <div class="card-img-wrapper">
+        <img src="assets/Apple rainbow LOGO.png" alt="Apple rainbow LOGO">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Apple Rainbow Logo</div>
+        <div class="desc-block">
+          <p class="desc-formal">Retro multi-colored brand asset vectorization reproducing six horizontal color bands with precise arc alignment.</p>
+          <p class="desc-casual">Love the vintage 70s Apple vibe—built carefully layer by layer.</p>
+        </div>
       </div>
     </article>
 
-    <!-- Card 3 -->
+    <!-- 3. Asian logo_normal.jpg -->
     <article class="card">
-      <img src="assets/TASK 3 INDEPENDENCE DAY 1080x1350.png" alt="Independence Day Post">
-      <div class="info">
-        <h3>Independence Day Social Graphic (Portrait)</h3>
-        <p>Custom vector celebration creative optimized for Instagram feed posts (1080x1350).</p>
+      <div class="card-img-wrapper">
+        <img src="assets/Asian logo_normal.jpg" alt="Asian logo_normal">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Asian Shooting Confederation Logo</div>
+        <div class="desc-block">
+          <p class="desc-formal">Official sporting federation brand mark featuring target geometry, concentric circle styling, and athletic typography.</p>
+          <p class="desc-casual">Recreated for shooting sport competition display materials.</p>
+        </div>
       </div>
     </article>
 
-    <!-- Card 4 -->
+    <!-- 4. Asset 1.png -->
     <article class="card">
-      <img src="assets/TASK 3 INDEPENDENCE DAY 1080x1920.png" alt="Independence Day Story">
-      <div class="info">
-        <h3>Independence Day Story Graphic</h3>
-        <p>Vertical display format (1080x1920) designed for social media story channels.</p>
+      <div class="card-img-wrapper">
+        <img src="assets/Asset 1.png" alt="Asset 1">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Concentric Target Vector Asset</div>
+        <div class="desc-block">
+          <p class="desc-formal">Geometric ring pattern study using circular offset paths and balanced primary color quadrant divisions.</p>
+          <p class="desc-casual">A clean optical target experiment playing with path angles and colors.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5. brochure design-1.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/brochure design-1.png" alt="brochure design-1">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Corporate Business Brochure Cover</div>
+        <div class="desc-block">
+          <p class="desc-formal">Modern commercial brochure cover concept utilizing bold red geometric accents and structured grid alignment for corporate print media.</p>
+          <p class="desc-casual">Sleek, sharp, and business-ready template layout.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6. brochure design-2.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/brochure design-2.png" alt="brochure design-2">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Minimalist Booklet Cover</div>
+        <div class="desc-block">
+          <p class="desc-formal">Clean corporate publication cover design integrating soft circular palette shapes with balanced typographic hierarchy.</p>
+          <p class="desc-casual">A softer, modern editorial look for business proposals.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 7. Eid-Ul-Adha fasting.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/Eid-Ul-Adha fasting.png" alt="Eid-Ul-Adha fasting">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Eid-Ul-Adha Fasting Announcement</div>
+        <div class="desc-block">
+          <p class="desc-formal">Community cultural announcement flyer combining decorative Arabic typography, event timing schedules, and thematic imagery.</p>
+          <p class="desc-casual">Designed for local community awareness and social messaging.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 8. famous brand logos.jpg -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/famous brand logos.jpg" alt="famous brand logos">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Corporate Logo Vector Suite</div>
+        <div class="desc-block">
+          <p class="desc-formal">Comprehensive vector recreation sheet mastering global commercial brand marks across tech, luxury, and sports industries.</p>
+          <p class="desc-casual">My ultimate logo training sheet—building muscle memory in Illustrator.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 9. FB LOGO.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/FB LOGO.png" alt="FB LOGO">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Social Media Brand Mark</div>
+        <div class="desc-block">
+          <p class="desc-formal">Precision shape-building exercise reproducing standard app icon vector specifications and brand color fidelity.</p>
+          <p class="desc-casual">Quick clean icon vectorization practice.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10. FILM THURSDAYS.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/FILM THURSDAYS.png" alt="FILM THURSDAYS">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Indian Film Thursdays Screening Poster</div>
+        <div class="desc-block">
+          <p class="desc-formal">Promotional event poster designed for cultural film screening series, incorporating cinema-themed typography and event details layout.</p>
+          <p class="desc-casual">Created for a weekly movie night event branding package.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 11. Hajj Perunaal Tholugai.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/Hajj Perunaal Tholugai.png" alt="Hajj Perunaal Tholugai">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Hajj Perunaal Prayer Event Poster</div>
+        <div class="desc-block">
+          <p class="desc-formal">Informational event flyer featuring structured venue details, timing schedules, and cultural community typography.</p>
+          <p class="desc-casual">Clear and readable event graphic designed for print and WhatsApp distribution.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 12. IKCC LOGO.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/IKCC LOGO.png" alt="IKCC LOGO">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">IKCC Cultural Emblem Concept</div>
+        <div class="desc-block">
+          <p class="desc-formal">Circular emblem branding design created for the India-Kuwait Cultural Collective, blending cultural symbolism, heritage motif, and clean vector circular text paths.</p>
+          <p class="desc-casual">A custom emblem representing unity and community heritage.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 13. INDEPENDENCE DAY 1080x1350.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/INDEPENDENCE DAY 1080x1350.png" alt="INDEPENDENCE DAY 1080x1350">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Independence Day Feed Post (4:5)</div>
+        <div class="desc-block">
+          <p class="desc-formal">Commemorative patriotic graphic optimized for Instagram feed dimensions (1080x1350), integrating map silhouettes, tricolor elements, and formal typography.</p>
+          <p class="desc-casual">Custom social post celebrating 80 years of independence.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 14. INDEPENDENCE DAY 1080x1920.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/INDEPENDENCE DAY 1080x1920.png" alt="INDEPENDENCE DAY 1080x1920">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Independence Day Story Graphic (9:16)</div>
+        <div class="desc-block">
+          <p class="desc-formal">Vertical mobile display layout (1080x1920) formatted for social story feeds with balanced national emblem accents and clear readability.</p>
+          <p class="desc-casual">Vertical story version formatted for mobile screens.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 15. INDIA CULTURAL SOCIETY KUWAIT.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/INDIA CULTURAL SOCIETY KUWAIT.png" alt="INDIA CULTURAL SOCIETY KUWAIT">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">India Cultural Society Kuwait Emblem</div>
+        <div class="desc-block">
+          <p class="desc-formal">Gold-trimmed circular seal graphic incorporating custom vector illustrations and curved typography paths for community identity.</p>
+          <p class="desc-casual">Formal badge design with gold metallic ring detailing.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 16. indian embassy round logo.png -->
+    <article class="card">
+      <img src="assets/indian embassy round logo.png" alt="indian embassy round logo">
+      <div class="card-content">
+        <div class="card-title">Embassy Seal Vector Recreation</div>
+        <div class="desc-block">
+          <p class="desc-formal">High-precision vectorization of institutional seal artwork, reproducing official national emblem details and precise circular text layout.</p>
+          <p class="desc-casual">Clean official seal reconstruction built in Illustrator.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 17. INDIAN EMBASSY.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/INDIAN EMBASSY.png" alt="INDIAN EMBASSY">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Indian Embassy Event Graphic</div>
+        <div class="desc-block">
+          <p class="desc-formal">Wide-format backdrop and screen graphic designed for diplomatic event screening and stage presentations.</p>
+          <p class="desc-casual">Widescreen banner for official screening events.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 18. ioc logo intertwine method.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/ioc logo intertwine method.png" alt="ioc logo intertwine method">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Olympic Rings Intertwine Method</div>
+        <div class="desc-block">
+          <p class="desc-formal">Advanced Pathfinder tool demonstration showing interlaced path construction and overlapping ring transparency masking in vector design.</p>
+          <p class="desc-casual">Mastering the classic intertwined ring technique without raster tricks.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 19. logo recreations 2.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/logo recreations 2.png" alt="logo recreations 2">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Social Icon & App Mark Suite</div>
+        <div class="desc-block">
+          <p class="desc-formal">Grid collection of modern application and social platform brand icons constructed using precise geometric primitives in Illustrator.</p>
+          <p class="desc-casual">Social media icons vectorized for digital display menus.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 20. logo recreations 3.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/logo recreations 3.png" alt="logo recreations 3">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Branded Vector Logo Collection</div>
+        <div class="desc-block">
+          <p class="desc-formal">Curated showcase sheet featuring sports, tech, and retail corporate brand mark vector recreations.</p>
+          <p class="desc-casual">Another vector practice sheet sharpening my anchor point speed.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 21. logo recreations.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/logo recreations.png" alt="logo recreations">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">App & Platform Icon Set</div>
+        <div class="desc-block">
+          <p class="desc-formal">Clean multi-icon vector sheet demonstrating brand icon construction and color consistency across app interfaces.</p>
+          <p class="desc-casual">Icon set practice for web and broadcast lower-thirds.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 22. Movie Fonts Practice_Billa Title.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/Movie Fonts Practice_Billa Title.png" alt="Movie Fonts Practice_Billa Title">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Cinematic Title Vector Art - Billa</div>
+        <div class="desc-block">
+          <p class="desc-formal">Custom stylized vector calligraphy recreating iconic Tamil cinematic title lettering with sharp geometric flourishes.</p>
+          <p class="desc-casual">Custom movie title typography recreation—converting script to clean vectors.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 23. Movie Fonts Practice_Nenje Ezhu Title.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/Movie Fonts Practice_Nenje Ezhu Title.png" alt="Movie Fonts Practice_Nenje Ezhu Title">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Cinematic Title Vector Art - Nenje Ezhu</div>
+        <div class="desc-block">
+          <p class="desc-formal">Expressive calligraphy-inspired vector title design focusing on organic curves and smooth path transitions in custom typography.</p>
+          <p class="desc-casual">Flowing script title study drawn with pen tool curves.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 24. Movie Fonts Practice_Thuppaki themed Title.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/Movie Fonts Practice_Thuppaki themed Title.png" alt="Movie Fonts Practice_Thuppaki themed Title">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Cinematic Title Vector Art - Thuppakki</div>
+        <div class="desc-block">
+          <p class="desc-formal">Action-themed custom block lettering vector art constructed with sharp stencil cuts and bold display weight.</p>
+          <p class="desc-casual">Bold action typography recreation designed with blocky paths.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 25. Movie Fonts Practice_Vikram Vedha Title.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/Movie Fonts Practice_Vikram Vedha Title.png" alt="Movie Fonts Practice_Vikram Vedha Title">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Cinematic Title Vector Art - Vikram Vedha</div>
+        <div class="desc-block">
+          <p class="desc-formal">Stylized dual-tone custom typography graphic recreating dramatic cinema title branding with high contrast lettering.</p>
+          <p class="desc-casual">High-contrast dual tone typography art from the iconic movie title.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 26. optical illusion using blend tools.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/optical illusion using blend tools.png" alt="optical illusion using blend tools">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Geometric Optical Illusion</div>
+        <div class="desc-block">
+          <p class="desc-formal">Complex vector geometric spiral generated using Illustrator's advanced Blend Tool and continuous spectrum color transitions.</p>
+          <p class="desc-casual">Fun optical art created with automated vector path blends.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 27. Scoreboard Model for 1980x1080 screens.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/Scoreboard Model for 1980x1080 screens.png" alt="Scoreboard Model for 1980x1080 screens">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">1920x1080 Widescreen Scoreboard Interface</div>
+        <div class="desc-block">
+          <p class="desc-formal">Broadcast-ready range scoreboard UI mock-up created for 1080p sports display screens, focusing on high-visibility shooting data layouts.</p>
+          <p class="desc-casual">Custom scoreboard layout designed for live shooting range monitors.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 28. test1.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/test1.png" alt="test1">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">Gulf Shooting Academy Kuwait Emblem</div>
+        <div class="desc-block">
+          <p class="desc-formal">Target-themed sports academy emblem constructed using concentric vector circles, national flag accents, and sport typography.</p>
+          <p class="desc-casual">Target emblem branding created for local shooting sports academy.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 29. test2.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/test2.png" alt="test2">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">75th Republic Day Post Creative</div>
+        <div class="desc-block">
+          <p class="desc-formal">Commemorative national event social creative featuring feathered tricolor vector background accents and formal gold lettering.</p>
+          <p class="desc-casual">Festive social post creative designed for official holiday messaging.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 30. test4.png -->
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="assets/test4.png" alt="test4">
+        <span class="card-watermark-tag">@flippix</span>
+      </div>
+      <div class="card-content">
+        <div class="card-title">75th Republic Day Vertical Story Creative</div>
+        <div class="desc-block">
+          <p class="desc-formal">Story-formatted national holiday banner layout (1080x1920) designed for high visual impact on mobile social media feeds.</p>
+          <p class="desc-casual">Vertical mobile story layout for holiday broadcast messaging.</p>
+        </div>
       </div>
     </article>
 
   </main>
 
+  <!-- Full Size Lightbox Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img id="modalImage" src="" alt="Full Size View">
+  </div>
+
+  <!-- Page Footer -->
   <footer>
-    <p>© Mohamed Siddiq • Portfolio for Resume Reference</p>
+    <p>© Mohamed Siddiq A.R. • Portfolio for Resume & Professional Reference</p>
+    <p style="margin-top: 0.5rem;">
+      Email: <a href="mailto:mdsiddiq1611@gmail.com">mdsiddiq1611@gmail.com</a> | 
+      WhatsApp: <a href="https://wa.me/96555312184" target="_blank">+965 5531 2184</a> | 
+      Handle: <strong>@flippix</strong>
+    </p>
   </footer>
+
+  <script>
+    // Modal Lightbox Script
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const closeBtn = document.querySelector(".close");
+
+    document.querySelectorAll(".card").forEach(card => {
+      card.addEventListener("click", () => {
+        const img = card.querySelector("img");
+        if (img) {
+          modal.style.display = "flex";
+          modalImg.src = img.src;
+          modalImg.alt = img.alt;
+        }
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+
+    // Auto-fallback in case file extension on GitHub differs (.jpg vs .png)
+    document.querySelectorAll(".card img").forEach(img => {
+      img.onerror = function() {
+        if (this.src.endsWith('.png')) {
+          this.src = this.src.replace('.png', '.PNG');
+        } else if (this.src.endsWith('.PNG')) {
+          this.src = this.src.replace('.PNG', '.jpg');
+        }
+      };
+    });
+  </script>
 
 </body>
 </html>
