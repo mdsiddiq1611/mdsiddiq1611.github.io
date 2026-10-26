@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Siddiq | Graphic Design & Vector Portfolio</title>
+  <style>
+    :root {
+      --bg-color: #0d1117;
+      --card-bg: #161b22;
+      --border-color: #30363d;
+      --text-main: #c9d1d9;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      padding: 2rem 1rem;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 3rem auto;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+
+    .card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .card .info {
+      padding: 1.2rem;
+    }
+
+    .card .info h3 {
+      color: #ffffff;
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card .info p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-color);
+      padding-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mohamed Siddiq</h1>
+    <p>Graphic Design • Adobe Illustrator Vector Artwork • Digital Media</p>
+  </header>
+
+  <main class="grid">
+
+    <!-- Card 1 -->
+    <article class="card">
+      <img src="assets/TASK 1 IKCC LOGO.png" alt="IKCC Emblem Concept">
+      <div class="info">
+        <h3>IKCC Cultural Emblem Concept</h3>
+        <p>Vector logo design created in Adobe Illustrator focusing on modern cultural typography and balance.</p>
+      </div>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card">
+      <img src="assets/TASK 2 FILM THURSDAYS.png" alt="Indian Film Thursdays Poster">
+      <div class="info">
+        <h3>Indian Film Thursdays Screening Poster</h3>
+        <p>Promotional poster layout designed for event series branding and print/digital distribution.</p>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card">
+      <img src="assets/TASK 3 INDEPENDENCE DAY 1080x1350.png" alt="Independence Day Post">
+      <div class="info">
+        <h3>Independence Day Social Graphic (Portrait)</h3>
+        <p>Custom vector celebration creative optimized for Instagram feed posts (1080x1350).</p>
+      </div>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="card">
+      <img src="assets/TASK 3 INDEPENDENCE DAY 1080x1920.png" alt="Independence Day Story">
+      <div class="info">
+        <h3>Independence Day Story Graphic</h3>
+        <p>Vertical display format (1080x1920) designed for social media story channels.</p>
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    <p>© Mohamed Siddiq • Portfolio for Resume Reference</p>
+  </footer>
+
+</body>
+</html>
